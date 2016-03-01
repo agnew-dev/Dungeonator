@@ -3,6 +3,9 @@
   "description": "May your swords be swift and your arrows sharp, or something.",
   "version": "0.0.1",
   "manifest_version": 2,
+  "permissions":[
+    "storage"
+  ],
   "app": {
     "background": {
       "scripts": ["background.js"]

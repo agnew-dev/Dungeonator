@@ -87,6 +87,13 @@
     line-height: 60px;
 }
 
+.navbar{
+  height: 65px;
+  background-color: #000;
+  border: none;
+  border-radius: none;
+}
+
 .sidebar-nav > .sidebar-brand a {
     color: #999999;
 }
