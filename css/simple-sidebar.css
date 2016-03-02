@@ -5,12 +5,32 @@
  */
 
 /* Toggle Styles */
-
+html{
+  overflow-y: auto;
+}
+.locationPane{
+  overflow:auto;
+  height: 100%;
+}
 .addLocButton{
   padding-right: 20px !important;
 }
 .form-group{
 
+}
+
+.pane{
+
+}
+.pane-parent{
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start; /* align items in Main Axis */
+  align-items: stretch; /* align items in Cross Axis */
+  align-content: stretch; /* Extra space in Cross Axis */
 }
 
 .addItem{
@@ -69,11 +89,13 @@ li{
     width: 100%;
     position: absolute;
     padding: 15px;
+    overflow-y: auto !important;
 }
 
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
+    overflow-y:auto;
 }
 
 /* Sidebar Styles */

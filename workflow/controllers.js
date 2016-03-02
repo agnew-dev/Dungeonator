@@ -30,6 +30,7 @@ angular.module('dungeonator.controllers', ['ngResource', 'ngRoute'])
 					id: locations.length + 1,
 					name: locationName,
 					people: [ {
+						personId: Number,
 						personName: String,
 						personrace: String,
 						personHP: Number,
@@ -37,7 +38,17 @@ angular.module('dungeonator.controllers', ['ngResource', 'ngRoute'])
 						personItems: []
 					}
 				],
+				shops:[{
+					shopId: 0,
+					shopName: '',
+					shopOverview: '',
+					owerName: '',
+					ownerRace: '',
+					ownerGender: '',
+					shopItems: ''
+				}],
 				quests:[{
+					questId: Number,
 					questName: String,
 					questGiver: String,
 					questTasks: [String]
@@ -108,6 +119,31 @@ angular.module('dungeonator.controllers', ['ngResource', 'ngRoute'])
 				});
 			});
 		}
+
+
+
+		/* SHOP FUNCTION */
+
+		$scope.showShopLabel = function(shop){
+			return shop.shopId === $scope.currentLocation.shops[0].shopId;
+		};
+
+		$scope.showAddShop = function(shop){
+			return shop.shopId === $scope.currentLocation.shops[0].shopId;
+		};
+
+		$scope.addNewShop = function(){
+			var shop =
+				{
+					shopId: $scope.currentLocation.shops.length + 1,
+					shopName: '',
+					shopOverview: '',
+					owerName: '',
+					shopItems: ['']
+				};
+
+				$scope.currentLocation.shops.push(shop);
+		};
 
 		// INIT locations
 		$scope.initLocations = function(){
